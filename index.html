@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery Report</title>
+    <!-- tailwind & daisyUI  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- style css  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="container mx-auto max-w-4xl mt-10 p-5">
+    <header></header>
+    <main class="">
+      <h1 class="flex justify-center text-2xl font-bold">Delivery & Internal Transfer Report</h1>
+      <!-- main function section  -->
+      <section class="mt-10">
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+            <h2>Delivery / Internal Transfer(Bag)</h2>
+            <h2>Delivery / Internal Transfer(Bulk)</h2>
+          </div>
+        <!-- 1st  -->
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Delivery Bag
+            <input id="delivery_by_bag" type="number" class="grow" placeholder="Bag Qty" value="0" />
+          </label>
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Delivery M.Ton
+            <input id="delivery_by_mton"  type="number" class="grow" placeholder="M.Ton Qty"  value="0"/>
+          </label>
+        </div>
+        <!-- 2nd  -->
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Factory Return Bag
+            <input id="factory_return_bag" type="number" class="grow" placeholder="Daisy" value="0" />
+          </label>
+          <label  class="input input-bordered flex items-center gap-4 flex-1">
+            Factory Return M.Ton
+            <input id="factory_return_mton" type="number" class="grow" placeholder="Daisy" value="0" />
+          </label>
+        </div>
+        <!-- 3rd  -->
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Gabtoli Return Bag
+            <input id="gabtoli_return_bag" type="number" class="grow" placeholder="Daisy"  value="0"/>
+          </label>
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Gabtoli Return M.Ton
+            <input id="gabtoli_return_mton" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+        </div>
+        <!-- 4th  -->
+        <div class="lg:flex justify-between gap-4  mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            C&B Return Bag
+            <input id="cb_return_bag" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            C&B Return M.Ton
+            <input id="cb_return_mton" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+        </div>
+        <!-- 5th  -->
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Nagarbari Return Bag
+            <input id="nagarbari_return_bag" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Nagarbari Return M.Ton
+            <input  id="nagarbari_return_mton" type="number" class="grow" placeholder="Daisy"value="0" />
+          </label>
+        </div>
+        <!-- 6th  -->
+        <div class="lg:flex justify-between gap-4 mb-5 mt-3">
+          <label class="input input-bordered flex items-center gap-4 flex-1">
+            Noapara Return Bag
+            <input id="noapara_return_bag" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+          <label  class="input input-bordered flex items-center gap-4 flex-1">
+            Noapara Return M.Ton
+            <input id="noapara_return_mton" type="number" class="grow" placeholder="Daisy" value="0"/>
+          </label>
+        </div>
+      </section>
+      <div class="lg:flex justify-between mb-6 gap-4">
+        <button id="delivery_report_btn" class="btn btn-primary flex-1">Delivery Report</button>
+        <button id="internal_transfer_report_btn" class="btn btn-secondary flex-1">Internal Transfer Report</button>
+      </div>
+      <!-- result section  -->
+      <section class="items-start mb-16 mt-10">
+           <div class="lg:flex justify-start gap-4">
+            <h2>Total Delivery Bag & M.Ton :</h2>
+            <h3 id="total_delivery_bag_mton"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Without M.Ton :</h2>
+            <h3 id="total_delivery_wout_mton"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery M.Ton Convert Bag :</h2>
+            <h3 id="total_delivery_Mton_to_bag"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag Without Return :</h2>
+            <h3 id="total_delivery_bag"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag without Factory Return :</h2>
+            <h3 id="total_delivery_bag_fr"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag without Gabtoli Return :</h2>
+            <h3 id="total_delivery_bag_gabtolir"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag without C&B Return :</h2>
+            <h3 id="total_delivery_bag_cbr"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag without Nagarbari Return :</h2>
+            <h3 id="total_delivery_bag_nagarbarir"></h3>
+           </div>
+           <div class="lg:flex justify-start gap-4 mt-3">
+            <h2>Total Delivery Bag without Noapara Return :</h2>
+            <h3 id="total_delivery_bag_noaparar"></h3>
+           </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
