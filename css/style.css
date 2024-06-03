@@ -1,0 +1,14 @@
+
+footer, th, td{
+    font-size: 18px;
+
+}
+
+
+@media screen and (max-width: 768px) {
+.input{
+    height: 80px;
+    margin-top: 5px;
+}
+}
+

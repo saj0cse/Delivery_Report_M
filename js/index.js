@@ -2,6 +2,12 @@
 document
   .getElementById("delivery_report_btn")
   .addEventListener("click", function () {
+
+
+    // display table report 
+    const tableSection = document.getElementById('tableId');
+    tableSection.style.display  = "block";
+
     const deliveryByBag = document.getElementById("delivery_by_bag");
     const deliveryByMton = document.getElementById("delivery_by_mton");
     // get value input field
